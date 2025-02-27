@@ -459,10 +459,7 @@ const point: Point = { x: 1, y: 2 };
 ### typeof
 
 ```ts
-const sem: Person = { name: "semlinker", age: 30 };
-type Sem = typeof sem; // type Sem = Person
-/* --------------------------------------------------------- */
-const Message = {
+const message = {
   name: "jimmy",
   age: 18,
   address: {
@@ -470,17 +467,16 @@ const Message = {
     city: "成都",
   },
 };
-type message = typeof Message;
-/*
- type message = {
-    name: string;
-    age: number;
-    address: {
-        province: string;
-        city: string;
-    };
-}
-*/
+type Message = typeof message;
+
+type Message = {
+  name: string;
+  age: number;
+  address: {
+    province: string;
+    city: string;
+  };
+};
 ```
 
 ### keyof
@@ -488,29 +484,17 @@ type message = typeof Message;
 在编写代码时我们会碰到使用 Object[key]的形式取得对象中的值，但在 ts 中默认会报错没有 string 的索引类型，此时我们需要去定义。
 
 ```ts
+interface Person {
+  name: string;
+  age: number;
+}
+
+type K1 = keyof Person; // "name" | "age"
+type K2 = keyof Person[]; // "length" | "toString" | "pop" | "push" | "concat" | "join"
+type K3 = keyof { [x: string]: Person }; // string | number
+
 interface UserInfoMap {
   [key: string]: string | undefined;
-}
-const userInfoMap: UserInfoMap = {
-  userId: "用户ID",
-  account: "用户账户",
-  email: "用户邮箱",
-  username: "用户昵称",
-  user_picture: "头像",
-};
-//  可以通过 Object[key] 取到对应值
-console.log("userId", userInfoMap["userId"]);
-
-// 推荐
-let userInfoMap = {
-  userId: "用户ID",
-  account: "用户账户",
-  email: "用户邮箱",
-  username: "用户昵称",
-  user_picture: "头像",
-};
-function prop<T extends object, K extends keyof T>(obj: T, key: K): T[K] {
-  return obj[key];
 }
 ```
 
@@ -530,13 +514,8 @@ type Obj = {
 // 取得参数类型
 type ParamType<T> = T extends (arg: infer P) => any ? P : T;
 
-type Param = ParamType<Func>; // Param = User
-type A = ParamType<string>; // string
 //  取到函数返回值的类型
 type ReturnType<T> = T extends (...args: any[]) => infer R ? R : any;
-
-type Func = () => string;
-type Test = ReturnType<Func>; // Test = string
 ```
 
 ### 映射类型
