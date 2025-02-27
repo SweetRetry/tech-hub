@@ -60,7 +60,7 @@ export default defineConfig({
           text: "语言基石",
           items: [
             { text: "TypeScript类型系统", link: "/language/typescript" },
-            { text: "SQL高级技巧", link: "/language/sql" },
+            { text: "SQL原理", link: "/language/sql" },
           ],
         },
       ],
