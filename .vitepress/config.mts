@@ -88,6 +88,7 @@ export default defineConfig({
           text: "服务端架构",
           items: [
             { text: "Nginx配置指南", link: "/infra/nginx" },
+            { text: "CDN原理", link: "/infra/cdn" },
             { text: "OAuth协议详解", link: "/infra/oauth" },
           ],
         },
