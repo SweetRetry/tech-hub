@@ -30,8 +30,9 @@ export default defineConfig({
       {
         text: "工程方法论",
         items: [
+          { text: "Monorepo架构", link: "/engineering/monorepo" },
           { text: "设计模式", link: "/engineering/patterns" },
-          { text: "重构实践", link: "/engineering/refactoring" },
+          // { text: "重构实践", link: "/engineering/refactoring" },
         ],
       },
       {
@@ -42,15 +43,16 @@ export default defineConfig({
             text: "CDN",
             link: "/infra/cdn",
           },
+          {
+            text: "TLS 协议",
+            link: "/infra/tls",
+          },
           { text: "OAuth", link: "/infra/oauth" },
         ],
       },
       {
-        text: "技术成长",
-        items: [
-          { text: "面试题库", link: "/career/interview" },
-          { text: "架构设计", link: "/career/architecture" },
-        ],
+        text: "Web 笔记",
+        link: "/web-note",
       },
     ],
 
@@ -60,7 +62,7 @@ export default defineConfig({
           text: "语言基石",
           items: [
             { text: "TypeScript类型系统", link: "/language/typescript" },
-            { text: "SQL原理", link: "/language/sql" },
+            { text: "SQL概论", link: "/language/sql" },
           ],
         },
       ],
@@ -78,27 +80,23 @@ export default defineConfig({
         {
           text: "工程方法论",
           items: [
+            { text: "Monorepo架构实践", link: "/engineering/monorepo" },
             { text: "设计模式实战", link: "/engineering/patterns" },
-            { text: "代码重构艺术", link: "/engineering/refactoring" },
+            // { text: "代码重构艺术", link: "/engineering/refactoring" },
           ],
         },
       ],
       "/infra/": [
         {
-          text: "服务端架构",
+          text: "网络架构",
           items: [
             { text: "Nginx配置指南", link: "/infra/nginx" },
             { text: "CDN原理", link: "/infra/cdn" },
+            {
+              text: "TLS 协议",
+              link: "/infra/tls",
+            },
             { text: "OAuth协议详解", link: "/infra/oauth" },
-          ],
-        },
-      ],
-      "/career/": [
-        {
-          text: "技术成长",
-          items: [
-            { text: "面试题库解析", link: "/career/interview" },
-            { text: "架构设计实践", link: "/career/architecture" },
           ],
         },
       ],
