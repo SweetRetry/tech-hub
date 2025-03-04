@@ -7,12 +7,11 @@ export default defineConfig({
     sidebar: {
       "/": [
         {
-          text: "浏览器原理",
+          text: "浏览器生态",
           collapsed: false,
           items: [
-            { text: "多进程架构", link: "/browser/multi-process" },
-            { text: "渲染机制", link: "/browser/rendering" },
             { text: "工作原理", link: "/browser/working-principle" },
+            { text: "多进程架构", link: "/browser/multi-process" },
           ],
         },
         {
@@ -49,10 +48,9 @@ export default defineConfig({
     nav: [
       { text: "首页", link: "/" },
       {
-        text: "浏览器",
+        text: "浏览器生态",
         items: [
           { text: "多进程架构", link: "/browser/multi-process" },
-          { text: "渲染机制", link: "/browser/rendering" },
           { text: "工作原理", link: "/browser/working-principle" },
         ],
       },
@@ -77,7 +75,7 @@ export default defineConfig({
       },
     ],
     socialLinks: [
-      { icon: "github", link: "https://github.com/your-username/tech-hub" },
+      { icon: "github", link: "https://github.com/SweetRetry/tech-hub.git" },
     ],
   },
 });
